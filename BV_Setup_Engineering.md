@@ -5,7 +5,7 @@ Scope: FEAT-0001 only
 
 ## Run locally
 
-Keep all files in the same directory. Start any static web server in that directory, then open `BV_Index_Client.html` through the server. Opening the HTML directly as a `file://` URL is not recommended.
+Keep all files in the same directory. Start any static web server in that directory, then open `index.html` through the server. Opening the HTML directly as a `file://` URL is not recommended.
 
 Example with Node installed:
 
