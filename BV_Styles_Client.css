@@ -1,0 +1,53 @@
+:root {
+  color-scheme: dark;
+  background: #050a12;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100dvh;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 20%, #132c48 0%, #050a12 65%);
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* The sized wrapper: full-bleed on phones, capped to half-width (and
+   centered, via the body's place-items:center) on tablets/desktops. This is
+   deliberately NOT the element Phaser's Scale.RESIZE targets — Phaser force-
+   overwrites its parent's inline width/height to 100%/100%, which would
+   stomp these rules if applied directly to #game-container. #game-shell
+   gives Phaser something definite to fill instead. */
+#game-shell {
+  width: 100vw;
+  height: 100dvh;
+  touch-action: none;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+@media (min-width: 768px) {
+  #game-shell {
+    width: 50vw;
+  }
+}
+
+#game-container {
+  width: 100%;
+  height: 100%;
+}
+
+canvas { display: block; }
